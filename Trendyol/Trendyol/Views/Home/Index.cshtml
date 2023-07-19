@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TrendyolLayout.cshtml";
+}
+
+
+<div class="row container  w-100" style="height:200px;">
+
+ 
+    <div class="col-md-4 mt-3 ">
+
+        <img style="width:400px;" src="~/img/Siparisinumut_Tepebanner_200223_202302202219.webp" />
+    </div>
+    <div class="col-md-4 mt-3 ">
+
+        <img style="width:400px;" src="~/img/Bakanlik1_202302171954.webp" />
+    </div>
+    <div class="col-md-3 mt-3 ">
+
+        <img style="width:400px;" src="~/img/Tobb_Tepebanner_0304231_202304061225.webp" />
+    </div>
+    <br /><br /> <br /><br /> <br /><br />
+    <div class=" w-100  container  mt-3" style="height:80px;">
+
+        <div class="row col-md-12">
+            <div class="col-md-4">
+                <div style="opacity:0.8" class="alert aler alert-success ml-5"> <h6 style="font-weight:bold;text-align:center;font-size:18px;">Sepete En Çok Eklenenler</h6></div>
+            </div>
+            <div class="col-md-4 ">
+                <div style="opacity:0.8" class="alert aler alert-danger"> <h6 style="font-weight:bold;text-align:center;font-size:18px;color:saddlebrown">En Çok Öne Çıkanlar</h6> </div>
+            </div>
+            <div style="opacity:0.8" class="col-md-4 ">  <div class="alert aler alert-danger"> <h6 style="font-weight:bold;text-align:center;font-size:18px;"> Flaş Ürünler</h6></div></div>
+        </div>
+
+    </div>
+
+
+</div>
+<br />
+<br />
+<br />
+<div class="row ml-5 container  w-100" style="height:200px;">
+
+    <div class="row">
+        <div class="col-md-4">
+            <a href="/category/reyon/2">
+                <div id="card" class="card " style="width:350px;">
+                    <img style="height:200px;" class="card-img-top w-100" src="~/img/HGUYGYU.webp" alt="Card image cap" />
+                    <p style="position:absolute;margin-top:180px;background-color:black;color:white;display:block"> Son Model Yazlık Oversizee Erkek Gömlekler için.. <p>
+                </div>
+
+            </a>
+           
+
+
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width:350px;">
+                <img style="height:200px;" class="card-img-top w-100" src="~/img/b.webp" alt="Card image cap" />
+                <p style="position:absolute;margin-top:180px;background-color:black;color:white;display:block"> Kamping XL-L  Çantalar - Surpriz Alışverişler için  ...</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width:350px;">
+                <img style="height:200px;" class="card-img-top w-100" src="~/img/c.webp" alt="Card image cap" />
+                <p style="position:absolute;margin-top:180px;background-color:black;color:white;display:block"> Kamping XL-L  Çantalar - Surpriz Alışverişler için  ...</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+@await Html.PartialAsync("_FooterContent")

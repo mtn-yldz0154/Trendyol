@@ -1,0 +1,42 @@
+﻿
+@model List<Category>
+
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Kategoriler</h2>
+<hr />
+<br />
+
+<table class="table table-bordered table-striped table-hover table-dark">
+
+
+    <thead>
+        <tr>
+            <th>CategoryId</th>
+            <th>CategoryName</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+            <td>@item.Id</td>
+            <td>@item.CategoryName</td>
+            <td> <a href="/admin/editcategory/@item.Id" class="btn btn-info">Edit</a> </td>
+                <td> <a href="/admin/DeleteCategory/@item.Id" class="btn btn-danger">Delete</a> </td>
+        </tr>
+        }
+        
+    </tbody>
+
+
+</table>
+<br />
+<a href="/admin/addcategory" class="btn btn-primary ml-3">Add Category </a>

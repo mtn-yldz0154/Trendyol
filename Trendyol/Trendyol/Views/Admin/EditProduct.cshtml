@@ -1,0 +1,147 @@
+﻿@model ProductViewModel
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>EditProduct</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-controller="Admin" asp-action="EditProduct" method="POST" enctype="multipart/form-data">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductName" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input class="form-control" asp-for="ProductName">
+                            <span asp-validation-for="ProductName" class="text-danger"></span>
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductPrice" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input class="form-control" asp-for="ProductPrice">
+                            <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductImageUrl1" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <img width="120" height="80" src="~/img/@Model.Product1" />
+                         
+                            <input type="file" name="ProductImageUrl1" />   <br />
+
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductImageUrl2" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <br />
+                            <img width="120" height="80" src="~/img/@Model.Product2" />
+                           
+                            <input type="file" name="ProductImageUrl2" />  
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductImageUrl3" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <br />
+                            <img width="120" height="80" src="~/img/@Model.Product3" />
+                            
+                            <input type="file" name="ProductImageUrl3" />
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductSalePrice" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input class="form-control" asp-for="ProductSalePrice">
+                            <span asp-validation-for="ProductSalePrice" class="text-danger"></span>
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductDespcription" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input class="form-control" asp-for="ProductDespcription">
+                            <span asp-validation-for="ProductDespcription" class="text-danger"></span>
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductTitle" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input class="form-control" asp-for="ProductTitle">
+                            <span asp-validation-for="ProductTitle" class="text-danger"></span>
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductSize" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input class="form-control" asp-for="ProductSize">
+                            <span asp-validation-for="ProductSize" class="text-danger"></span>
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductStarNumber" class="col-sm-2 ml-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input class="form-control" asp-for="ProductStarNumber">
+                            <span asp-validation-for="ProductStarNumber" class="text-danger"></span>
+                        </div>
+                        <br /> <br />
+                    </div>
+
+
+
+
+
+                    <div class="form-group row ml-2">
+                        <label style="margin-left:20px;" asp-for="ProductStock" class="col-sm-2 ml-2 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input class="form-control" asp-for="ProductStock">
+                            <span asp-validation-for="ProductStock" class="text-danger"></span>
+                        </div>
+                        <br /> <br />
+                    </div>
+
+                    <div class="form-group row ml-2">
+
+                        <label style="margin-left:20px;" asp-for="CategoryId" class="col-sm-2 col-form-label ">Kategori Seçiniz</label>
+                        <div class="col-sm-9">
+                            @Html.DropDownListFor(i=>i.CategoryId,(List<SelectListItem>)ViewBag.Values,new{@class="form-control"})
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-12 offset-sm-2 mt-3 ml-3">
+                            <button type="submit" class="btn btn-outline-primary">Kategori Kaydet</button>
+                        </div>
+                        <br />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Products";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>Products</h1>
+<hr />
+<br />
+<table class="table table-bordered table-striped table-hover table-dark">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Stock</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+              <tr>
+            <td>@item.ProductName</td>
+                <td><img width="45" height="35" src="~/img/@item.ProductImageUrl1" /></td>
+            <td>@item.ProductPrice TL</td>
+            <td>@item.ProductDespcription.Substring(1,80)...</td>
+            <td>@item.ProductStock</td>
+            <td>@item.Category.CategoryName</td>
+            <td>
+                <a href="/admin/productdetails/@item.Id" class="btn btn-info">Details</a>
+                    <a href="/admin/EditProduct/@item.Id" class="btn btn-warning">Edit</a>
+                <a href="/admin/deleteproduct/@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+              </tr>
+        }
+      
+
+    </tbody>
+</table>
+
+            <br />
+            <a href="/admin/addproduct" class="btn btn-primary ml-3">Add To Product</a>

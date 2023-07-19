@@ -1,0 +1,353 @@
+﻿<style>
+
+    
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-toggle {
+        text-decoration: none;
+        font-size: 15px;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    #sepet{
+        color:black;
+    }
+    #sepet:hover{
+        color:darkorange;
+    }
+      #favori{
+        color:black;
+    }
+
+        #favori:hover {
+        color:darkorange;
+    }
+
+    #giris {
+        color: black;
+    }
+
+        #giris:hover {
+            color: darkorange;
+        }
+  
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <img src="https://cdn.dsmcdn.com/mrktng/crm/2023/top/jul/t.jpg" class="img-fluid rounded-top" alt="">
+
+    <div class="w-100" style="height:30px ">
+
+        <div style="float:right ;margin-right:100px ;">
+            <a style="text-decoration: none; font-size: 13px; margin-right: 15px;" class="text-muted" href="#">İndirim Kuponları</a>
+            <a style="text-decoration: none; font-size: 13px; margin-right: 15px;" class="text-muted" href="#">Trendyol'da Satış Yap</a>
+            <a style="text-decoration: none; font-size: 13px; margin-right: 15px;" class="text-muted" href="#">Hakkımızda</a>
+            <a style="text-decoration: none; font-size: 13px; margin-right: 15px;" class="text-muted" href="#">Yardım & Destek</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-2">
+                <a href="~/">
+                    <img src="https://cdn.dsmcdn.com/web/logo/ty-web.svg" class="img-fluid rounded-top w-75" alt=""></a>
+            </div>
+            <div class="col-md-5">
+                <form class="w-80" asp-asp-controller="user" asp-action="search" method="post">
+                    <div class="input-group">
+                        <input name="q" type="text" class="form-control" placeholder="Aradığınız Ürün veya Markayı Yazınız">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-5">
+
+                <div class="row" style="margin-left: 90px;">
+                    @if(User.Identity.IsAuthenticated)
+                    {
+                    <div class="dropdown col mt-3">
+                        <div style="color:white" class="dropdown-toggle " id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a id="giris" style=";text-decoration:none" class="" href=""><i class="fa-solid fa-user"></i> Hesabım</a>
+                        </div>
+                        
+                            <div style="color:darkorange" class="dropdown-menu" aria-labelledby="accountDropdown">
+                                <!-- Dropdown content goes here -->
+                                <a class="dropdown-item" href="#">@User.Identity.Name</a>
+                                <a class="dropdown-item" href="/cart/getorder"> <i class="fas fa-box"></i>  Tüm Siparişlerim </a>
+                                <a class="dropdown-item" href="#"> <i class="fas fa-message"></i>  Değerlendirmelerim </a>
+                                <a class="dropdown-item" href="#"> <i class="fas fa-signs-post"></i>  Satıcı Mesajlarım </a>
+                                <a class="dropdown-item" href="#"> <i class="fas fa-gift"></i>  Şanslı Çekiliş </a>
+                                <a class="dropdown-item" href="#"> <i class="fas fa-wallet"></i>  Trendyol Cüzdanım </a>
+                                <a class="dropdown-item" href="#"> <i class="fas fa-tag"></i>  İndirim Kuponlarım </a>
+                                <a class="dropdown-item" href="/account/accountsetting"> <i class="fas fa-user"></i>  Kullanıcı Bilgilerim </a>
+                                <a class="dropdown-item" href="#"> <i class="fas fa-diamond"></i>  Trendyol Elite </a>
+                                <a class="dropdown-item" href="#"> <i class="fas fa-smile"></i> Trendyol Asistan</a>
+                                <a class="dropdown-item" href="/account/logout"> <i class="fas fa-door-open"></i> Çıkış Yap</a>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a class="dropdown-item" href="/admin/index"> <i class="fa fa-user" aria-hidden="true"></i> Admin Paneli</a>
+                                }
+
+
+                            </div>
+                      
+                     
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="dropdown col mt-3">
+                            <div style="color:white" class="dropdown-toggle " id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a id="giris" style="text-decoration:none" class="" href=""><i class="fa-solid fa-user"></i> Giriş Yap</a>
+                            </div>
+
+                            <div style="color:darkorange" class="dropdown-menu" aria-labelledby="accountDropdown">
+                                <!-- Dropdown content goes here -->
+                                <a style="background-color:darkorange;color:white;" class="dropdown-item" href="/account/login">Giriş Yap</a>
+                                <a class="dropdown-item" href="/account/register"> Üye Ol </a>
+
+
+
+                            </div>
+
+
+                        </div>
+                    }
+                
+                    
+        
+                   
+
+                    <div style="text-decoration: none; font-size: 15px;margin-left:-20px; " class="col mt-3 ">
+
+                        <a id="favori" style="text-decoration:none;" href="/favori/index">  <i class="fa fa-heart"></i> Favorilerim</a>
+                       
+
+
+                    </div>
+                    <div style="text-decoration: none; font-size: 15px;" class="col mt-3 ">
+                        <a id="sepet" style="text-decoration:none; " href="/cart/index">  <i class="fa fa-shopping-cart"></i> Sepetim</a>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid d-flex justify-content-between" style="height:50px">
+
+        <div id ="pompa" class="mx-auto" style="margin-top: 25px;color: black;">
+
+
+
+            <a  style="text-decoration: none; font-size: 15px; margin-left:0px ;margin-top: 15px; font-weight:bold;color:black" href="">Kadın</a>
+            <a  style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Erkek</a>
+            <a  style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Anne & Çocuk</a>
+            <a  style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Ev & Mobilya</a>
+            <a  style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Süpermarket</a>
+            <a  style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Kozmetik</a>
+            <a style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Ayakkabı & Çanta</a>
+            <a  style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Elektronik</a>
+            <a  style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Spor&Outdoor</a>
+            <a  style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Çok Satanlar</a>
+            <a style="text-decoration: none; font-size: 15px; margin-left:30px ;margin-top: 15px;font-weight:bold;color:black" href="">Flaş Ürünler</a>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+@*
+<style>
+    
+    
+
+    /* Styles for wrapping the search box */
+    .swiper {
+  width: 600px;
+  height: 300px;
+}
+
+    #card img:hover{
+        transition: width 2s, height 4s;
+       
+    }
+
+   
+    div.x a{
+        margin-right:15px;
+      color:black;
+      font-weight:bold;
+    }
+    div.x a:hover{    
+     color:orange;
+     
+    }
+
+   
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+a{
+    text-decoration:none;
+}
+
+/*Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    li
+ne-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+</style>
+<div class=" shadow">
+    <img class="w-100" style="height:70px;" src="~/img/t.webp " />
+    <div class="w-100" style="height:30px;">
+        <div style="float:right;margin-right:130px;">
+            <a style="margin-right:15px;font-size:13px;" href="#" class="text-muted">İndirim Kuponlarım</a>
+            <a style="margin-right:15px;font-size:13px;" class="text-muted">Trendyolda Satış Yap</a>
+            <a style="margin-right:15px;font-size:13px;" class="text-muted">Hakkımızda</a>
+            <a style="margin-right:15px;font-size:13px;" class="text-muted">Yardım&Destek</a>
+        </div>
+
+
+    </div>
+    <div class="w-100 container mt-2 " style="background-color:white;height:80px">
+
+
+
+        <div class="w-100  ml-5" style="background-color:white;height:80px;">
+
+            <div class="row">
+                <div class="col-md-2">  <h2 style="display:inline">trendyol</h2></div>
+                <div class="col-md-6">
+                    <form class="w-80" asp-asp-controller="user" asp-action="search" method="post">
+                        <div class="input-group">
+                            <input name="q" type="text" class="form-control" placeholder="Aradığınız Ürün veya Markayı Yazınız">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 ml-5">
+
+
+
+                    <a style="text-decoration:none;color:darkorange;margin-left:40px;" class=" a hesabım ml-5" href="/user/index"><i class="fa fa-user"></i> Hesabım <span class="sr-only">)</span></a>
+                    <div id ="none" style="display:none;width:200px;height:200px;background-color:whitesmoke;position:absolute;margin-left:-50px;z-index:2;">
+                        <ul style="list-style-type:none">
+                            <li style="color:darkorange;font-size:18px;"> @User.Identity.Name</li>
+                            <li> @ViewBag.Email</li>
+                            <li>fjdfhjdk</li>
+                            <li>fjdfhjdk</li>
+                            <li>fjdfhjdk</li>
+                            <li>fjdfhjdk</li>
+                            <li>fjdfhjdk</li>
+                            <li>fjdfhjdk</li>
+                        </ul>
+                    </div>
+
+                    <a style="text-decoration:none;color:darkorange;margin-left:40px;" " href="/favori/index">  <i class="fa fa-heart"></i> Favorilerim</a>
+                    <a style="text-decoration:none;color:darkorange;margin-left:40px;" " href="/cart/index">  <i class="fa fa-shopping-cart"></i> Sepetim</a>
+
+
+
+                </div>
+            </div>
+
+                 <div class="w-100 x mt-3" style="height:30px;">
+            <a href="#">Kadın</a>
+            <a href="#">Erkek</a>
+            <a href="#">Anne & Çocuk</a>
+            <a href="#">Ev & Mobilya</a>
+            <a href="#">Süpermarket</a>
+            <a href="#">Kozmetik</a>
+            <a href="#">Ayakkabı & Çanta</a>
+            <a href="#">Elektronik</a>
+            <a href="#">Spor & Outdoor</a>
+            <a class="q" href="#">Çok Satanlar <span class="span" style="font-size:12px;background-color:red;color:white;border-radius:25%">Yeni</span></a>
+            <a href="#">Flaş Ürünler <span style="font-size:12px;background-color:red;color:white;border-radius:25%">Yeni</span></a>
+        </div>
+        </div>
+   
+
+    </div>
+
+</div>
+
+
+            z*@

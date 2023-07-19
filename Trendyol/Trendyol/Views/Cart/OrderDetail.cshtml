@@ -1,0 +1,455 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "OrderDetail";
+    Layout = "~/Views/Shared/_TrendyolLayout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-2 g-0 ">
+
+            <div style="width: 210px; height: 40px;border: 1px solid; color: lightslategrey;border-radius: 10px;"
+                 class="  overflow-hidden d-flex align-items-center justify-content-center my-2 mx-2 ">
+                <div class="row text-dark fw-medium" style="">@Model.Email</div>
+            </div>
+
+
+            <div class="container  mt-4">
+
+
+
+                <div class="card overflow-auto" style="width: 210px; height: 600px;">
+
+
+                    <div class="accordion overflow-scroll" style="width: 100%; height: 100%;"
+                         id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+                                        aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    Siparişlerim
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                 aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body d-flex flex-column ">
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-box"></i><span style="font-size: small;">
+                                            Tüm
+                                            Siparişlerim
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-walkie-talkie"></i> <span style="font-size: small;">Değerlendirmelerim</span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fa-regular fa-message"></i><span style="font-size: small;">
+                                            Satıcı
+                                            Mesajlarım
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-bag-shopping"></i><span style="font-size: small;">
+                                            Tekrar
+                                            Satın Al
+                                        </span>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                    Sana Özel
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body  d-flex flex-column">
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-tag"></i><span style="font-size: small;">
+                                            İndirim
+                                            Kuponlarım
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-gift"></i>
+                                        <span style="font-size: small;">Şanslı Çekiliş</span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fa-regular fa-clock"></i><span style="font-size: small;">
+                                            Önceden
+                                            Gezdiklerim
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-store"></i><span style="font-size: small;">
+                                            Takip Ettiğim
+                                            Mağazalar
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-diamond"></i><span style="font-size: small;">
+                                            Trendyol
+                                            Elite
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-wallet"></i><span style="font-size: small;">
+                                            Trendyol
+                                            Cüzdanım
+                                        </span>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                    Hesabım & Yardım
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body d-flex flex-column">
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-user-alt"></i><span style="font-size: small;">
+                                            Kullanıcı
+                                            Bilgilerim
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-location"></i>
+                                        <span style="font-size: small;">Adres Bilgilerim</span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fa-regular fa-credit-card"></i><span style="font-size: small;">
+                                            Kayıtlı Kartlarım
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-bell"></i><span style="font-size: small;">
+                                            Duyuru
+                                            Tercihlerim
+                                        </span>
+                                    </a>
+                                    <a class="text-muted text-decoration-none" href="">
+                                        <i class="fas fa-question-circle"></i><span style="font-size: small;">
+                                            Yardım
+                                        </span>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+           
+
+        </div>
+
+
+
+
+        <div class="col-sm-10 my-3">
+
+
+            <div class="container my-3 d-flex flex-column justify-content-center align-content-between  "
+                 style="border: 1px solid lightgrey;border-radius: 5px;min-height: 10%;">
+                <div class="row">
+                    <div class="col-sm-3 d-flex flex-column justify-content-center  ">
+                        <h5>Sipariş Detayı</h5>
+                    </div>
+                    <div class="col-sm-2 d-flex flex-column justify-content-center align-items-center">
+                        <div class="row " style="font-size: small;"><small><b>Sipariş Tarihi</b></small></div>
+                        <div class="row text-muted" style="font-size: small;">@Model.OrderDate.ToString("dd MMMM yyyy") - @Model.OrderDate.ToString("HH :mm")</div>
+                    </div>
+
+                    <div class="col-sm-2 d-flex flex-column justify-content-center align-items-center">
+                        <div class="row" style="font-size: small;"><small><b>Sipariş No</b></small></div>
+                        <div class="row text-muted" style="font-size: small;">@Model.OrderNumber</div>
+                    </div>
+                    <div class="col-sm-2 d-flex flex-column justify-content-center align-items-center">
+                        <div class="row" style="font-size: small;"><small><b>Sipariş Özeti</b></small></div>
+                        <div class="row text-muted" style="font-size: small;">1 Teslimat, @Model.OrderItems.Count() Ürün</div>
+                    </div>
+
+                    <div class="col-sm-2 offset-1 d-flex justify-content-end align-items-center">
+                        <h6 style="color: rgb(113, 201, 113);">1 Teslim</h6>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container">
+
+                <div class="row " style="background-color:#fafafa">
+                    <div class="col-2 d-flex align-items-center justify-content-center">
+                        <div class="col-3"><i class="fas fa-box" style="color:darkorange;"></i></div>
+                        <div class="col-9 d-flex flex-column">
+
+                            <span>Teslimat No</span>
+                            <span>2690988092</span>
+                        </div>
+                    </div>
+                    <div class="col-2 flex-column d-flex">
+
+                        <div class="row ">Kargo Firması</div>
+                        <div class="row d-flex justify-content-start align-self-start">
+                            <img class="img-fluid"
+                                 src="ty-express.svg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="container col-12 my-4 " style="background-color:#fafafa;">
+                    <div class="row d-flex justify-content-start ">
+
+                        <div class="col-auto">
+                            <small>
+                                <b>Satıcı: </b>
+                            </small>
+                        </div>
+                        <div class="col-1">
+                            <small>
+                                <a class="text-decoration-none d-flex justify-content-center flex-column align-items-center mt-1"
+                                   href="">
+                                    <h6 class="text-decoration-none">EVKOLİK </h6>
+                                </a>
+                            </small>
+                        </div>
+                        <div class="col-8">
+                            <small>
+                                <div style="font-size: x-small;border: 1px solid black;"
+                                     class="btn btn-light btn-sm text-dark">
+                                    Takip et
+                                </div>
+                            </small>
+                        </div>
+
+                        <div class="col-2 ">
+                            <div class="">
+                                <button type="button" name="" id="" style="background-color: darkorange;"
+                                        class="d-flex justify-content-center align-items-center btn btn-primary btn-sm text-light">
+                                    Satıcıyı
+                                    Değerlendir
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                @if(Model.OrderState==EnumOrderState.completed)
+                {
+                    <div class="row  my-2">
+                        <div class="col-auto"><i class="fas fa fa-check" style="color: green;"></i></div>
+                        <div class="col-2" style="color: green;"> <span>Teslim Edildi </span></div>
+
+                    </div>
+                }
+                @if (Model.OrderState == EnumOrderState.cancel)
+                {
+                    <p class="lead text-danger fw-normal mb-0">
+
+                        <i class="fa fa-times text-danger" aria-hidden="true"></i>  İptal Edildi
+                    </p>
+
+                }
+
+                @if (Model.OrderState == EnumOrderState.unpaid)
+                {
+                    <p style="color:darkorange" class="lead  fw-normal mb-0">
+
+                        <i style="color:darkorange" class="fa-solid fa-truck"></i>   Kargoda     </p>
+
+                }
+              
+                @if (Model.OrderState == EnumOrderState.waiting)
+                {
+                                                <p style="color:darkblue" class="lead  fw-normal mb-0">
+
+                                                    <i style="color: darkblue;" class="fas fa-check"></i>  Sipariş Alındı              
+                                                </p>
+
+                }
+                <div class="row my-2 ">
+
+                    <div class="col-10">
+                        <span>Aşağıdaki 1 ürün 10 Temmuz Pazartesi günü teslim edilmiştir. </span>
+                    </div>
+
+                </div>
+
+                <div class="row my-2">
+
+                    <div class="col-10">
+                        <a name="" id="" class="btn btn-light"
+                           style="border: 1px solid lightslategrey;" href="#" role="button">Teslimat Detay</a>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    @foreach (var item in Model.OrderItems)
+                    {
+                        <div class="col-7">
+                            <div class="card">
+
+                                <div class="row">
+
+                                    <div class="col-4">
+                                        <img class=" m-3  " style="max-width: 85%;min-height: 85%;" src="~/img/@item.Product.ProductImageUrl1" alt="Title">
+                                    </div>
+
+                                    <div class="col-8">
+                                        <div class="card-body">
+                                            <p class="card-text">@item.Product.ProductTitle</p>
+                                            <p class="card-text">Beden: @item.Product.ProductSize , Tek Ebat - Adet: @item.Quantity</p>
+                                            <p class="card-text" style="color: darkorange;">@item.Price TL</p>
+                                            <p><button class="btn btn-primary " style="color: darkorange;background-color: white;border-color: darkorange;">Ürünü Değerlendir</button></p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    }
+              
+
+                </div>
+
+
+                <div class="container my-5" style="border: 1px solid lightslategray;border-radius: 10px;background-color: whitesmoke;">
+
+                    <div class="row">
+
+
+                        <div class="col" style="border: 1px solid lightslategray;border-radius: 10px;background-color: whitesmoke;">
+
+                            <div class="row my-2 ">
+                                <h6>Teslimat Bilgileri</h6>
+                            </div>
+
+                            <div class="row my-2 ">
+                                <h6><small style="color: darkorange;">Teslimat Adresi</small></h6>
+                            </div>
+
+                            <div class="row my-2">
+                                <small>@Model.FirstName @Model.LastName</small>
+                            </div>
+
+                            <div class="row my-2 overflow-hidden">
+                                <small>@Model.Address</small>
+
+                            </div>
+
+                            <div class="row my-2"><small>@Model.City</small></div>
+
+
+                            <div class="row my-2 ">
+                                <h6><small style="color: darkorange;">Fatura Bilgileri</small></h6>
+                            </div>
+
+                            <div class="row my-2">
+                                <small>@Model.FirstName @Model.LastName</small>
+                            </div>
+
+                            <div class="row my-2 overflow-hidden">
+                                <small>@Model.Address</small>
+
+                            </div>
+
+                            <div class="row my-2"><small>@Model.City</small></div>
+
+                        </div>
+
+
+                        <div class="col" style="border: 1px solid lightslategray;border-radius: 10px;background-color: whitesmoke;">
+
+                            <div class="row my-2 d-flex justify-content-between">
+                                <div class="col-6">
+                                    <h6>Ödeme Bilgileri</h6>
+
+                                </div>
+                                <div class="col-6">
+                                    <h6>****0008 - Tek Çekim</h6>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="row my-2 mt-2">
+                                <div class="col-sm-10"><small>Sepet Toplamı</small></div>
+                                <div class="col-sm-2"><small>@Model.OrderItems.Sum(i=>i.Price) TL</small></div>
+                            </div>
+                            <div class="row my-2 mt-2">
+                                <div class="col-sm-10"><small>Kargo Tutarı</small></div>
+                                <div class="col-sm-2"><small>21.99</small></div>
+                            </div>
+                            <div class="row my-2 mt-2">
+                                <div class="col-sm-10"><small>1000 TL ve Üzeri Kargo Bedava (Satıcı Karşılar)</small></div>
+                                <div class="col-sm-2"><small style="color: red;">-21,99 TL</small></div>
+                            </div>
+                            <div class="row my-2 mt-2">
+                                <div class="col-sm-9">Toplam</div>
+                                <div class="col-sm-3"><small style="color: darkorange;"><b>@(Model.OrderItems.Sum(i=>i.Price)+21.99) TL</b></small></div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+</div>

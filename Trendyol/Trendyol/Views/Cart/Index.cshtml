@@ -1,0 +1,263 @@
+﻿@model Cart
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TrendyolLayout.cshtml";
+}
+
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+<div class=" col-sm-12 mt-4">
+
+    <div class="row d-flex   g-5 h-76" style="min-height:30rem;">
+        <div class="col-sm-9">
+
+            <div class="row">
+                <h4 class="mb-4">Sepetim (@ViewBag.Count Ürün)</h4>
+            </div>
+       
+            @foreach (var item in Model.CartItems)
+            {
+                @if (item.StatusVisibilty == false)
+                {
+                    <div class="row">
+
+                        <div class="card container mt-2 p-0">
+                            <div style="margin-left: 10px;" class="row d-flex "><span><i style="color: orange;" class="fas fa-check-square m-2" style="font-size: 50px;"></i> <span class="text-muted"> Satıcı : <a class="text-muted text-decoration-none" style="color:black;font-weight:bold;font-size:15px" href="">LARABAY   </a></span></span> </div>
+                            <div class="card-header"></div>
+
+                            <div class="row d-flex align-items-center justify-content-center">
+
+                                <div class="col-7 ">
+
+                                    <div class="row" style="margin-left: 10px;">
+
+                                        <div class="container my-4 d-flex justify-content-start align-items-center gx-5">
+
+                                            <i style="color: orange;font-size: 20px;" class="fas fa-check-square m-2"></i>
+                                            <img style="max-height: 100px;max-width: 60px;" src="~/img/@item.Product.ProductImageUrl1" alt="">
+
+                                            <div style="margin-left: 10px;">
+                                                <div class="row"><div><span style="font-size:13px;font-weight:bold" class="text-decoration-none text-muted" href="">@item.Product.ProductTitle</span></div></div>
+                                                <div class="row"><div><span style="font-size:13px;" class="text-decoration-none text-muted" href="">Beden: @item.Product.ProductSize</span></div></div>
+                                                <div class="row"><div><span style="font-size:13px;" class="text-decoration-none text-muted" href=""><span style="color:seagreen;font-size:13px;">Hızlı Teslimat:</span> 1 saat içinde E-mail olarak gönderilecektir.</span></div></div>
+
+                                            </div>
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                </div>
+                                <div class="col-2 justify-content-center d-flex align-content-center">
+
+                                    <a style="background-color: darkorange;" name="" id="eksi" class="btn btn-primary btn-sm" href="#" role="button">-</a>
+                                    <input style="width: 30px;" id ="text" class="counter-content" type="text" pattern="[0-9]*" value="1">
+                                    <a style="background-color: darkorange;" name="" id="arti" class="btn btn-primary btn-sm"  role="button">+</a>
+
+                                </div>
+                                <div class="col-2">
+                                    <h4 style="color: darkorange;">@item.Product.ProductPrice TL</h4>
+                                </div>
+                                <div class="col-1">
+                                    <a href="/cart/deletetocart/@item.Product.Id">
+                                        <i style="font-size: 18px;" class="fas fa-trash"></i>
+
+                                    </a>
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                }
+
+            }
+            
+       
+        </div>
+
+
+
+
+
+     
+        <div class="col-sm-3 ">
+
+            <div class=" container h-100 ms-auto w-100 ml-1 " style="border-radius: 10px;">
+
+                <div class="d-grid gap-2 mt-2">
+                    <a href="/cart/checkout" style="background-color: darkorange;" type="button" name="" id="" class="btn btn-primary">Sepeti Onayla</a>
+                </div>
+
+                <div class="  h-25 mt-4" >
+
+                    <div class="card d-flex flex-column">
+
+                        <h4>
+                            Sipariş Özeti</h2>
+
+                            <div class="d-flex justify-content-between mt-1 mb-1">
+                                <h6 style="margin-left:5px;" class="text-muted ml-1">Ürünün Toplamı: </h6>
+                                <h6>@ViewBag.Sum TL</h6>
+                            </div>
+                            <div class="d-flex justify-content-between mt-1 mb-1">
+                                <h6 style="margin-left:5px;" class="text-muted">Kargo Toplam: </h6>
+                                <h6>21.99 TL</h6>
+                            </div>
+                           
+
+                    </div>
+
+
+                </div>
+
+                <div class="d-grid gap-2 mt-2">
+                    <img src="~/img/pudo-banner-with-free-cargo (1).svg" />
+                    <button style="background-color: whitesmoke;border: 1px solid darkorange;" type="button" name="" id="" class="btn btn-primary d-flex align-items-center justify-content-around"><i style="color: darkorange;" class="fas fa-plus"></i><h6 class="text-black mt-1"> İndirim Kodu Gir</h6></button>
+                </div>
+
+                <div class="d-grid gap-2 mt-2">
+                    <button style="background-color: darkorange;" type="button" name="" id="" class="btn btn-primary">Sepeti Onayla</button>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="row">
+   <div class="col-md-3">
+        <a style="color:darkorange;text-decoration:none" onclick="deneme2()"  id="onceden"> Önceden Eklediklerim</a>
+      </div>
+    <div class="col-md-3"><a onclick="deneme()" id ="onerilen" style="text-decoration:none" > Önerilen Ürünler</a></div>
+    <hr class="w-75" />
+</div>
+<div id ="div1"  class="row col-md-10">
+    @foreach (var item in ViewBag.Onceden)
+    {
+        <div class="col-md-5">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img style="position:absolute" width="90" height="180" src="~/img/@item.Product.ProductImageUrl1" />
+                            </div>
+                            <div class="col-md-6">
+                                <span style="font-size:12px;font-weight:bold" class="text-muted">outfiit manDokulu Oversize Gömlek </span>
+                                <p style="font-size:13px;" class="text-muted">Beden: XL</p>
+                                <span class="text-muted" style="font-size:12px;">Kargo Bedava</span>  <span style="font-size:12px; color: green;"><i class="fas fa-truck-fast" style="color: green;"></i> Hızlı Teslimat</span>
+                                <p style="color:darkorange;font-weight:bold">214 TL</p>
+                            </div>
+                            <div class="col-md-3">
+
+                                <div style="width:30px;height:30px;margin-left:30px; background-color:whitesmoke;border-radius:50%;text-align:center;display:inline">
+                                    <a href="#" title="Favorilere Ekle"><i class="fa fa-heart-o" style="font-size:20px;margin-top:8px;color:darkorange"></i></a>
+                                </div>
+                                <a href="/cart/deletetocart/">
+                                    <i style="font-size: 18px;color:gray;margin-left:5px;" class="fas fa-trash"></i>
+
+                                </a>
+
+
+
+                            </div>
+                            <div class="row">
+                                <a style="background-color:darkorange;width:30%;margin-left:300px;color:white" class="btn">Sepete Ekle</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="col-md-1"></div>
+
+</div>
+<div id ="div2" style="display:none" class="row col-md-10">
+
+    <div  class="d-flex flex-column justify-content-between ">
+
+        <div class="row gx-2" style="margin-bottom: 25px;">
+            @foreach (var item in ViewBag.Onerilen)
+            {
+                <div class="col-3">
+                    <div class="card" style="height: 80%;">
+                        <div class="card-header overflow-hidden" style="height: 100%; width: 100%;">
+
+                            <div class="row " style="height: 40%;margin-bottom:25px;width: fit-content;"><img src="~/img/@item.ProductImageUrl1" alt=""> </div>
+
+
+
+
+
+                        </div>
+                        <div class="card-body">
+                            <p style="font-size:14px;"><span style="font-weight:bold;">outfiitman</span> Dokulu Oversize Gömlek Beyaz 70171013</p>
+                            <div style="margin-top:-17px;" class="rating-wrap">
+                                <span style="font-size:10px" class="fa fa-star checked "></span>
+                                <span style="font-size:10px" class="fa fa-star "></span>
+                                <span style="font-size:10px" class="fa fa-star "></span>
+                                <span style="font-size:10px" class="fa fa-star "></span>
+                                <span style="font-size:10px" class="fa fa-star"></span>
+                                <span style="font-size:10px">(2550)</span>
+                            </div>
+                            <br />
+                            <p style="color:darkorange;font-weight:bold;">256 TL</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script>
+    const deneme  = () => {
+        $('#div1').css("display","none");
+        $('#div2').css("display","block");
+        $('#onerilen').css("color", "darkorange");
+        $('#onceden').css("color", "black");
+    }
+    const deneme2 = () => {
+        $('#div1').css("display", "block");
+        $('#div2').css("display", "none");
+        $('#onerilen').css("color", "black");
+        $('#onceden').css("color", "darkorange");
+    }
+</script>
+
+      

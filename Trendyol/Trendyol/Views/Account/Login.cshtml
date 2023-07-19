@@ -1,0 +1,83 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_TrendyolLayout.cshtml";
+}
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<style>
+    .login {
+        margin-top: 15px;
+        color: darkorange;
+    }
+</style>
+<br />
+<h4 class="text-center">
+    Merhaba,
+</h4>
+<h6 class="text-center">Trendyol’a giriş yap veya hesap oluştur, indirimleri kaçırma!</h6>
+<div></div>
+<div class="card container col-md-4">
+    <div class="row">
+        <div class="col-md-6 text-center login ">Giriş Yap</div>
+        <div style="  margin-top:15px;" class="col-md-5 text-center register w-80"><a style="color:black;text-decoration:none" href="/account/register">Kaydol</a></div>
+    </div>
+    <div class="card-body">
+
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <br />
+            <h6 class="card-title">E Posta</h6>
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <input asp-for="Email" class="form-control" />
+            <br />
+            <h6 class="card-title">Şifre</h6>
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <input asp-for="Password" class="form-control" />
+            <br />
+            <a style="float:right;text-decoration:underline;color:black" href="/account/forgotpassword">Sifremi Unuttum</a>
+            <br /><br />
+            <input style="background-color:darkorange;color:wheat" type="submit" value="Giriş" class="btn btn-block w-100 btn-primary">
+        </form>
+        <br />
+
+        <div class="row">
+
+            <div class="col-md-6 ">
+
+                <div class=" container" style="height:35px">
+                    <div>
+                        <div class="row">
+                            <div class="col-4" style="width:30px;height:30px;background-color:royalblue;font-weight:bold">
+                                <i style="color:white;" class='fa fa-facebook'></i>
+                            </div>
+                            <div class="col-8">
+                                <span style="font-size:15px;"> Facebook</span>
+                                <span style="font-size:12px;position:absolute;margin-top:18px;margin-left:-63px;" class="text-muted">ile Giriş Yap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 ">
+
+                <div class=" container" style="height:35px">
+                    <div>
+                        <div class="row">
+                            <div class="col-4" style="width:30px;height:30px;background-color:red;font-weight:bold">
+
+                                <i style="color:white;" class="fa-solid fa-g"></i>
+                            </div>
+                            <div class="col-8">
+                                <span style="font-size:15px;"> Facebook</span>
+                                <span style="font-size:12px;position:absolute;margin-top:18px;margin-left:-63px;" class="text-muted">ile Giriş Yap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
